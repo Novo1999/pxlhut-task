@@ -11,10 +11,10 @@ export type FormData = z.infer<typeof fullFormSchema>
 
 const FormContextProvider = ({ children }: { children: ReactNode }) => {
   const methods = useForm<FormData>({
-    mode: 'onChange',
+    mode: 'onSubmit',
     resolver: zodResolver(fullFormSchema),
   })
-  const onSubmit: SubmitHandler<FieldValues> = (data) => console.log(data)
+  const onSubmit: SubmitHandler<FieldValues> = (data) => data
 
   return (
     <FormProvider {...methods}>

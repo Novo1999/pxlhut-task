@@ -44,7 +44,7 @@ const AddressDetailsStepPage = () => {
               Street Address
             </label>
             <input id="streetAddress" {...register('street')} className="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" />
-            <p className="text-error">{errors?.street?.message}</p>
+            <p className="text-error">{errors?.street?.type !== 'invalid_type' && errors?.street?.message}</p>
           </div>
 
           {/* City */}
@@ -53,7 +53,7 @@ const AddressDetailsStepPage = () => {
               City
             </label>
             <input id="city" {...register('city')} className="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" />
-            <p className="text-error">{errors?.city?.message}</p>
+            <p className="text-error">{errors?.city?.type !== 'invalid_type' && errors?.city?.message}</p>
           </div>
 
           {/* Zip Code */}
@@ -62,7 +62,7 @@ const AddressDetailsStepPage = () => {
               Zip Code
             </label>
             <input id="zipCode" {...register('zip')} className="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" />
-            <p className="text-error">{errors?.zip?.message}</p>
+            <p className="text-error">{errors?.zip?.type !== 'invalid_type' && errors?.zip?.message}</p>
           </div>
 
           <div className="flex justify-between">

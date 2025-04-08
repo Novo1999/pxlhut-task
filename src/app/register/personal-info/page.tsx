@@ -30,7 +30,7 @@ const PersonalInfoStepPage = () => {
               Full Name
             </label>
             <input id="name" {...register('fullName')} className="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" />
-            <p className="text-error">{errors?.fullName?.message}</p>
+            <p className="text-error">{errors?.fullName?.type !== 'invalid_type' && errors?.fullName?.message}</p>
           </div>
 
           <div className="mb-4">
@@ -38,7 +38,7 @@ const PersonalInfoStepPage = () => {
               Email Address
             </label>
             <input id="email" {...register('email')} className="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="email" />
-            <p className="text-error">{errors?.email?.message}</p>
+            <p className="text-error">{errors?.email?.type !== 'invalid_type' && errors?.email?.message}</p>
           </div>
 
           <div className="mb-4">
@@ -46,7 +46,7 @@ const PersonalInfoStepPage = () => {
               Phone
             </label>
             <input id="phone" {...register('phone')} className="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="number" />
-            <p className="text-error">{errors?.phone?.message}</p>
+            <p className="text-error">{errors?.phone?.type !== 'invalid_type' && errors?.phone?.message}</p>
           </div>
 
           <div className="flex justify-end">
