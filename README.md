@@ -8,7 +8,7 @@ First, install dependencies:
 ```bash
 npm install
 # or
-yarn install
+yarn
 # or
 pnpm install
 # or
