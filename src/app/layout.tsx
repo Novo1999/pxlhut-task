@@ -1,5 +1,6 @@
 import FormContextProvider from '@/app/context/FormContext'
 import ReactQueryProvider from '@/app/context/ReactQueryProvider'
+import { ThemeProvider } from '@/app/context/ThemeContext'
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
@@ -28,7 +29,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <ReactQueryProvider>
-          <FormContextProvider>{children}</FormContextProvider>
+          <ThemeProvider>
+            <FormContextProvider>{children}</FormContextProvider>
+          </ThemeProvider>
         </ReactQueryProvider>
       </body>
     </html>
